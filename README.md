@@ -57,6 +57,22 @@ $ pnpm run test:e2e
 $ pnpm run test:cov
 ```
 
+## Database migrations
+
+```bash
+# generate a migration from entity changes
+$ npm run migration:generate -- ./src/migrations/CreateEventsTable
+
+# create an empty migration manually
+$ npm run migration:create -- ./src/migrations/CreateEventsTable
+
+# run all pending migrations
+$ npm run migration:run
+
+# revert the last migration
+$ npm run migration:revert
+```
+
 ## Deployment
 
 When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
