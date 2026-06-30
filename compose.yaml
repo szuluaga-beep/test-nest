@@ -1,0 +1,19 @@
+
+services:
+  
+  db:
+    image: postgres:15.2
+    restart: always
+    volumes:
+      - asegurando-db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: asegurando
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+
+    ports:
+      - "5432:5432"
+
+volumes:
+  asegurando-db:
+    external: false
