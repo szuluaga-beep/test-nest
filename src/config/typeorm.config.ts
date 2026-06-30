@@ -14,7 +14,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   ssl: process.env.STAGE === 'prod',
   useUTC: true,
   autoLoadEntities: true,
-  migrationsRun: true,
+  migrationsRun: process.env.NODE_ENV !== 'production', // Solo en desarrollo
 };
 
 export const dataSource = new DataSource(typeOrmConfig as DataSourceOptions);
