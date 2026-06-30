@@ -7,8 +7,8 @@ dotenv.config();
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
   url: process.env.DATABASE_URL,
-  entities: [__dirname + '/../**/*.entity.{js,ts}'],
-  migrations: [__dirname + '/../migrations/*.{js,ts}'],
+  entities: [__dirname + '/../**/*.entity.js'],
+  migrations: [__dirname + '/../migrations/*.js'],
   synchronize: false,
   logging: true,
   ssl: process.env.STAGE === 'prod',
