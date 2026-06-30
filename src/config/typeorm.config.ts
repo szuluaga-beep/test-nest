@@ -11,7 +11,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   migrations: [__dirname + '/../migrations/*.js'],
   synchronize: false,
   logging: true,
-  ssl: process.env.STAGE === 'prod',
+  ssl: process.env.NODE_ENV === 'production',
   useUTC: true,
   autoLoadEntities: true,
   migrationsRun: process.env.NODE_ENV !== 'production', // Solo en desarrollo
